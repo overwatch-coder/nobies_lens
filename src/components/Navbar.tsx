@@ -76,7 +76,7 @@ const Navbar = () => {
             <div className="bg-emerald-600 p-2 rounded-xl group-hover:scale-105 transition-transform">
               <Camera className="w-6 h-6 text-white" />
             </div>
-            <span className="text-xl font-serif font-bold text-slate-900 hidden sm:inline">
+            <span className="text-xl font-serif font-bold text-slate-900">
               Nobies Lens
             </span>
           </Link>
@@ -114,10 +114,7 @@ const Navbar = () => {
                   <Menu className="w-6 h-6 text-slate-900" />
                 </button>
               </SheetTrigger>
-              <SheetContent
-                side="right"
-                className="w-[300px] sm:w-[400px] bg-white p-4"
-              >
+              <SheetContent side="top" className="w-full bg-white p-4">
                 <SheetTitle className="sr-only">Menu</SheetTitle>
                 <div className="flex flex-col space-y-6 mt-8">
                   <div className="flex items-center space-x-2 pb-6 border-b border-gray-200">
@@ -129,26 +126,29 @@ const Navbar = () => {
                     </span>
                   </div>
 
-                  {navLinks.map((link) => (
-                    <div key={link.href}>
-                      {link.href.startsWith("/") ? (
+                  {/* Mobile Menu */}
+                  <div className="flex flex-col gap-4 items-start">
+                    {navLinks.map((link) =>
+                      link.href.startsWith("/") ? (
                         <Link
+                          key={link.href}
                           to={link.href}
                           onClick={() => setIsOpen(false)}
-                          className="text-left text-base font-semibold transition-all py-3 px-4 rounded-lg text-gray-700 hover:bg-emerald-100 hover:text-emerald-700 block shadow-sm hover:shadow-md border border-gray-100 hover:border-emerald-200 transform hover:-translate-y-0.5"
+                          className="p-3 rounded-md text-slate-900 hover:bg-accent/10 transition-colors w-full"
                         >
                           {link.name}
                         </Link>
                       ) : (
                         <button
+                          key={link.href}
                           onClick={() => handleNavClick(link.href)}
-                          className="text-left text-base font-semibold transition-all py-3 px-4 rounded-lg text-gray-700 hover:bg-emerald-100 hover:text-emerald-700 w-full shadow-sm hover:shadow-md border border-gray-100 hover:border-emerald-200 transform hover:-translate-y-0.5"
+                          className="p-3 rounded-md text-slate-900 hover:bg-accent/10 transition-colors w-full text-start"
                         >
                           {link.name}
                         </button>
-                      )}
-                    </div>
-                  ))}
+                      )
+                    )}
+                  </div>
                 </div>
               </SheetContent>
             </Sheet>

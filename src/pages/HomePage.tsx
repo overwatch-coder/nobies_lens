@@ -12,6 +12,7 @@ import {
   ChevronLeft,
   ChevronRight,
   X,
+  ArrowRight,
 } from "lucide-react";
 import {
   FaInstagram as Instagram,
@@ -25,6 +26,7 @@ import {
   socialLinks,
 } from "@/lib/constants";
 import type { PhotoCategory } from "@/types";
+import { Button } from "@/components/ui/button";
 
 export default function HomePage() {
   const [selectedPhotoIndex, setSelectedPhotoIndex] = useState<number | null>(
@@ -203,24 +205,29 @@ export default function HomePage() {
             {services.map((service, index) => {
               const Icon = service.icon;
               return (
-                <Link to={`/service/${service.id}`}>
-                  <button
-                    key={index}
-                    className="group bg-white p-6 md:p-8 rounded-3xl hover:shadow-2xl transition-all duration-500 hover:scale-[1.01] border-2 border-gray-100 text-left hover:border-emerald-600"
+                <div
+                  key={index}
+                  className="group bg-white p-6 md:p-8 rounded-3xl hover:shadow-2xl transition-all duration-500 hover:scale-[1.01] border-2 border-gray-100 text-left hover:border-emerald-600"
+                >
+                  <div
+                    className={`bg-linear-to-br ${service.color} p-4 rounded-2xl inline-block mb-6 shadow-lg`}
                   >
-                    <div
-                      className={`bg-linear-to-br ${service.color} p-4 rounded-2xl inline-block mb-6 shadow-lg`}
-                    >
-                      <Icon className="w-8 h-8 text-white" />
-                    </div>
-                    <h3 className="text-xl md:text-2xl font-semibold text-slate-900 mb-4">
-                      {service.title}
-                    </h3>
-                    <p className="text-gray-600 leading-relaxed text-sm md:text-base">
-                      {service.description}
-                    </p>
-                  </button>
-                </Link>
+                    <Icon className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="text-xl md:text-2xl font-semibold text-slate-900 mb-4">
+                    {service.title}
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed text-sm md:text-base">
+                    {service.description}
+                  </p>
+
+                  <Link to={`/service/${service.id}`}>
+                    <Button className="mt-4 md:w-fit w-full bg-emerald-600 hover:bg-emerald-700 text-white">
+                      <span>Info Info</span>
+                      <ArrowRight className="w-4 h-4" />
+                    </Button>
+                  </Link>
+                </div>
               );
             })}
           </div>
