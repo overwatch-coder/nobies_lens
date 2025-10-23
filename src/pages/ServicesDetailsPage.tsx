@@ -118,10 +118,7 @@ export default function ServiceDetailPage() {
                 <button
                   onClick={() =>
                     window.open(
-                      `https://wa.me/${socialLinks.whatsapp.text}?text=I'm interested in the` +
-                        pkg.name +
-                        " package for " +
-                        service.title,
+                      `https://wa.me/${socialLinks.whatsapp.text}?text=I'm interested in the ${pkg.name} package for ${service.title}`,
                       "_blank"
                     )
                   }
@@ -149,7 +146,7 @@ export default function ServiceDetailPage() {
             {service.benefits.map((benefit, index) => (
               <div
                 key={index}
-                className="flex items-start gap-4 p-4 md:p-6 bg-white rounded-2xl border-2 border-gray-100 hover:border-emerald-300 transition-colors"
+                className="flex items-center gap-4 p-4 md:p-6 bg-white rounded-2xl border-2 border-gray-100 hover:border-emerald-300 transition-colors"
               >
                 <div className="bg-linear-to-br from-emerald-600 to-teal-600 p-2 rounded-lg shrink-0 mt-1">
                   <Check className="w-5 h-5 text-white" />
@@ -164,7 +161,7 @@ export default function ServiceDetailPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 md:py-24 px-4 bg-white">
+      <section className="py-16 md:py-24 px-4 bg-white -mt-8">
         <div className="max-w-4xl mx-auto text-center">
           <div className="inline-flex items-center gap-2 bg-linear-to-r from-emerald-600 to-teal-600 text-white px-6 py-2 rounded-full mb-6">
             <Sparkles className="w-5 h-5" />
