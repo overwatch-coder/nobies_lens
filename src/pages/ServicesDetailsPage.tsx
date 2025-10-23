@@ -118,7 +118,11 @@ export default function ServiceDetailPage() {
                 <button
                   onClick={() =>
                     window.open(
-                      `https://wa.me/${socialLinks.whatsapp.text}?text=I'm interested in the ${pkg.name} package for ${service.title}`,
+                      `https://wa.me/${
+                        socialLinks.whatsapp.text
+                      }?text=I'm interested in the ${
+                        pkg.name
+                      } package for ${service.title.replace("&", "and")}`,
                       "_blank"
                     )
                   }
