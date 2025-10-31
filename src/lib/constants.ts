@@ -12,7 +12,6 @@ import type {
 import {
   Camera,
   Users,
-  Heart,
   Award,
   Star,
   Clock,
@@ -20,11 +19,33 @@ import {
   MapPin,
 } from "lucide-react";
 
+const portraitImages = Array.from({ length: 11 }, (_, index) => {
+  return `/portrait/portrait_${index + 1}.jpg`;
+});
+
+const lifestyleImages = Array.from({ length: 9 }, (_, index) => {
+  return `/lifestyle/lifestyle_${index + 1}.jpg`;
+});
+
+const graduationImages = Array.from({ length: 23 }, (_, index) => {
+  return `/graduation/graduation_${index + 1}.jpg`;
+});
+
+const corporateImages = Array.from({ length: 26 }, (_, index) => {
+  return `/corporate/corporate_${index + 1}.jpg`;
+});
+
+export const heroImages: string[] = [
+  "/corporate/corporate_2.jpg",
+  "/lifestyle/lifestyle_1.jpg",
+  "/portrait/portrait_3.jpg",
+  "/portrait/portrait_11.jpg",
+];
+
 export const categories: PhotoCategory[] = [
   "all",
   "corporate",
   "portraits",
-  "creative",
   "graduation",
   "lifestyle",
 ];
@@ -43,16 +64,8 @@ export const services: Service[] = [
     description:
       "Timeless portraits in controlled studio settings or natural outdoor environments",
     icon: Camera,
-    color: "from-emerald-500 to-teal-500",
+    color: "from-gold/90 to-teal-500",
     id: "portraits",
-  },
-  {
-    title: "Creative Photoshoots",
-    description:
-      "Artistic and innovative photography that brings your vision to life",
-    icon: Heart,
-    color: "from-rose-500 to-pink-500",
-    id: "creative",
   },
   {
     title: "Graduation Photoshoots",
@@ -96,55 +109,45 @@ export const testimonials: Testimonial[] = [
   },
 ];
 
+// Create structured photo arrays
+const corporatePhotos = corporateImages.map((image) => ({
+  url: image,
+  category: ["all", "corporate"] as PhotoCategory[],
+}));
+
+const portraitPhotos = portraitImages.map((image) => ({
+  url: image,
+  category: ["all", "portraits"] as PhotoCategory[],
+}));
+
+const lifestylePhotos = lifestyleImages.map((image) => ({
+  url: image,
+  category: ["all", "lifestyle"] as PhotoCategory[],
+}));
+
+const graduationPhotos = graduationImages.map((image) => ({
+  url: image,
+  category: ["all", "graduation"] as PhotoCategory[],
+}));
+
+const topCorporate = corporatePhotos.slice(0, 3);
+const topPortrait = portraitPhotos.slice(0, 3);
+const topLifestyle = lifestylePhotos.slice(0, 3);
+const topGraduation = graduationPhotos.slice(0, 3);
+
+const remainingPhotos = [
+  ...corporatePhotos.slice(3),
+  ...portraitPhotos.slice(3),
+  ...lifestylePhotos.slice(3),
+  ...graduationPhotos.slice(3),
+];
+
 export const allPhotos: Photo[] = [
-  {
-    url: "https://images.pexels.com/photos/1308881/pexels-photo-1308881.jpeg?auto=compress&cs=tinysrgb&w=800",
-    category: ["all", "corporate"],
-  },
-  {
-    url: "https://images.pexels.com/photos/1858175/pexels-photo-1858175.jpeg?auto=compress&cs=tinysrgb&w=800",
-    category: ["all", "portraits"],
-  },
-  {
-    url: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=800",
-    category: ["all", "creative"],
-  },
-  {
-    url: "https://images.pexels.com/photos/1772123/pexels-photo-1772123.jpeg?auto=compress&cs=tinysrgb&w=800",
-    category: ["all", "lifestyle"],
-  },
-  {
-    url: "https://images.pexels.com/photos/1024311/pexels-photo-1024311.jpeg?auto=compress&cs=tinysrgb&w=800",
-    category: ["all", "portraits"],
-  },
-  {
-    url: "https://images.pexels.com/photos/1043471/pexels-photo-1043471.jpeg?auto=compress&cs=tinysrgb&w=800",
-    category: ["all", "creative"],
-  },
-  {
-    url: "https://images.pexels.com/photos/1105666/pexels-photo-1105666.jpeg?auto=compress&cs=tinysrgb&w=800",
-    category: ["all", "graduation"],
-  },
-  {
-    url: "https://images.pexels.com/photos/1526814/pexels-photo-1526814.jpeg?auto=compress&cs=tinysrgb&w=800",
-    category: ["all", "corporate"],
-  },
-  {
-    url: "https://images.pexels.com/photos/3771118/pexels-photo-3771118.jpeg?auto=compress&cs=tinysrgb&w=800",
-    category: ["all", "lifestyle"],
-  },
-  {
-    url: "https://images.pexels.com/photos/1270184/pexels-photo-1270184.jpeg?auto=compress&cs=tinysrgb&w=800",
-    category: ["all", "portraits"],
-  },
-  {
-    url: "https://images.pexels.com/photos/1264210/pexels-photo-1264210.jpeg?auto=compress&cs=tinysrgb&w=800",
-    category: ["all", "creative"],
-  },
-  {
-    url: "https://images.pexels.com/photos/1040881/pexels-photo-1040881.jpeg?auto=compress&cs=tinysrgb&w=800",
-    category: ["all", "graduation"],
-  },
+  ...topCorporate,
+  ...topPortrait,
+  ...topGraduation,
+  ...topLifestyle,
+  ...remainingPhotos,
 ];
 
 export const faqCategories: FAQCategory[] = [
@@ -299,11 +302,7 @@ export const serviceData: Record<ServiceType, ServiceData> = {
     description:
       "Professional photography coverage for your corporate events, conferences, and business gatherings",
     color: "from-blue-500 to-cyan-500",
-    images: [
-      "https://images.pexels.com/photos/1308881/pexels-photo-1308881.jpeg?auto=compress&cs=tinysrgb&w=800",
-      "https://images.pexels.com/photos/1526814/pexels-photo-1526814.jpeg?auto=compress&cs=tinysrgb&w=800",
-      "https://images.pexels.com/photos/1181690/pexels-photo-1181690.jpeg?auto=compress&cs=tinysrgb&w=800",
-    ],
+    images: corporateImages,
     pricing: {
       basic: {
         name: "Basic",
@@ -339,12 +338,8 @@ export const serviceData: Record<ServiceType, ServiceData> = {
     title: "Studio & Outdoor Portraits",
     description:
       "Timeless portrait photography in our professional studio or your preferred outdoor location",
-    color: "from-emerald-500 to-teal-500",
-    images: [
-      "https://images.pexels.com/photos/1858175/pexels-photo-1858175.jpeg?auto=compress&cs=tinysrgb&w=800",
-      "https://images.pexels.com/photos/1024311/pexels-photo-1024311.jpeg?auto=compress&cs=tinysrgb&w=800",
-      "https://images.pexels.com/photos/1270184/pexels-photo-1270184.jpeg?auto=compress&cs=tinysrgb&w=800",
-    ],
+    color: "from-gold/90 to-teal-500",
+    images: portraitImages,
     pricing: {
       basic: {
         name: "Basic",
@@ -376,57 +371,12 @@ export const serviceData: Record<ServiceType, ServiceData> = {
       "Satisfaction guarantee",
     ],
   },
-  creative: {
-    title: "Creative Photoshoots",
-    description:
-      "Artistic and innovative photography that brings your creative vision to life",
-    color: "from-rose-500 to-pink-500",
-    images: [
-      "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=800",
-      "https://images.pexels.com/photos/1043471/pexels-photo-1043471.jpeg?auto=compress&cs=tinysrgb&w=800",
-      "https://images.pexels.com/photos/1264210/pexels-photo-1264210.jpeg?auto=compress&cs=tinysrgb&w=800",
-    ],
-    pricing: {
-      basic: {
-        name: "Basic",
-        price: "$299",
-        hours: "1.5 hours",
-        photos: "Up to 75 photos",
-      },
-      professional: {
-        name: "Professional",
-        price: "$599",
-        hours: "3 hours",
-        photos: "Up to 200 photos",
-      },
-      premium: {
-        name: "Premium",
-        price: "$999",
-        hours: "5 hours",
-        photos: "Up to 400 photos",
-      },
-    },
-    benefits: [
-      "Unlimited creative direction and concepts",
-      "Professional styling and makeup coordination",
-      "Custom set design and props",
-      "Artistic editing and color grading",
-      "Multiple location options",
-      "Video highlights included",
-      "Behind-the-scenes content",
-      "Social media optimization",
-    ],
-  },
   graduation: {
     title: "Graduation Photoshoots",
     description:
       "Capture your milestone achievement with stunning graduation portraits and celebration photos",
     color: "from-amber-500 to-orange-500",
-    images: [
-      "https://images.pexels.com/photos/1105666/pexels-photo-1105666.jpeg?auto=compress&cs=tinysrgb&w=800",
-      "https://images.pexels.com/photos/1040881/pexels-photo-1040881.jpeg?auto=compress&cs=tinysrgb&w=800",
-      "https://images.pexels.com/photos/1772123/pexels-photo-1772123.jpeg?auto=compress&cs=tinysrgb&w=800",
-    ],
+    images: graduationImages,
     pricing: {
       basic: {
         name: "Basic",
@@ -463,11 +413,7 @@ export const serviceData: Record<ServiceType, ServiceData> = {
     description:
       "Authentic moments that tell your unique story in everyday settings and natural environments",
     color: "from-violet-500 to-purple-500",
-    images: [
-      "https://images.pexels.com/photos/1772123/pexels-photo-1772123.jpeg?auto=compress&cs=tinysrgb&w=800",
-      "https://images.pexels.com/photos/3771118/pexels-photo-3771118.jpeg?auto=compress&cs=tinysrgb&w=800",
-      "https://images.pexels.com/photos/1024311/pexels-photo-1024311.jpeg?auto=compress&cs=tinysrgb&w=800",
-    ],
+    images: lifestyleImages,
     pricing: {
       basic: {
         name: "Basic",

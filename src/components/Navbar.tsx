@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Camera, Menu } from "lucide-react";
+import { Menu } from "lucide-react";
 import {
   Sheet,
   SheetContent,
@@ -73,8 +73,12 @@ const Navbar = () => {
             to="/"
             className="flex items-center space-x-2 cursor-pointer group"
           >
-            <div className="bg-emerald-600 p-2 rounded-xl group-hover:scale-105 transition-transform">
-              <Camera className="w-6 h-6 text-white" />
+            <div className="p-2 rounded-xl group-hover:scale-105 transition-transform">
+              <img
+                src="/logos/logo_official_gold.png"
+                className="w-10 h-10 md:w-16 md:h-16 object-contain rounded-full"
+              />
+              {/* <Camera className="w-6 h-6 text-white" /> */}
             </div>
             <span className="text-xl font-serif font-bold text-slate-900">
               Nobies Lens
@@ -88,18 +92,18 @@ const Navbar = () => {
                 {link.href.startsWith("/") ? (
                   <Link
                     to={link.href}
-                    className="text-sm font-medium transition-colors relative group text-gray-600 hover:text-emerald-600"
+                    className="text-sm font-medium transition-colors relative group text-gray-600 hover:text-gold"
                   >
                     {link.name}
-                    <span className="absolute -bottom-1 left-0 h-0.5 bg-emerald-600 transition-all w-0 group-hover:w-full" />
+                    <span className="absolute -bottom-1 left-0 h-0.5 bg-gold transition-all w-0 group-hover:w-full" />
                   </Link>
                 ) : (
                   <button
                     onClick={() => handleNavClick(link.href)}
-                    className="text-sm font-medium transition-colors relative group text-gray-600 hover:text-emerald-600"
+                    className="text-sm font-medium transition-colors relative group text-gray-600 hover:text-gold"
                   >
                     {link.name}
-                    <span className="absolute -bottom-1 left-0 h-0.5 bg-emerald-600 transition-all w-0 group-hover:w-full" />
+                    <span className="absolute -bottom-1 left-0 h-0.5 bg-gold transition-all w-0 group-hover:w-full" />
                   </button>
                 )}
               </div>
@@ -116,10 +120,14 @@ const Navbar = () => {
               </SheetTrigger>
               <SheetContent side="top" className="w-full bg-white p-4">
                 <SheetTitle className="sr-only">Menu</SheetTitle>
-                <div className="flex flex-col space-y-6 mt-8">
+                <div className="flex flex-col space-y-6 mt-2">
                   <div className="flex items-center space-x-2 pb-6 border-b border-gray-200">
-                    <div className="bg-emerald-600 p-2 rounded-xl">
-                      <Camera className="w-6 h-6 text-white" />
+                    <div className="p-2 rounded-xl">
+                      <img
+                        src="/logos/logo_official_gold.png"
+                        className="w-16 h-16 object-contain"
+                      />
+                      {/* <Camera className="w-6 h-6 text-white" /> */}
                     </div>
                     <span className="text-xl font-serif font-bold text-slate-900">
                       Nobies Lens

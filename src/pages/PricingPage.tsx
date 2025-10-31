@@ -125,18 +125,18 @@ export default function PricingPage() {
   };
 
   return (
-    <div className="min-h-screen bg-linear-to-br from-gray-50 to-emerald-50/30 pt-16">
+    <div className="min-h-screen bg-linear-to-br from-gray-50 to-gold/30 pt-16">
       <section className="py-24 px-4">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 bg-emerald-600 text-white px-6 py-2 rounded-full mb-6 shadow-lg">
+            <div className="inline-flex items-center gap-2 bg-gold text-white px-6 py-2 rounded-full mb-6 shadow-lg">
               <Sparkles className="w-5 h-5" />
               <span className="font-semibold">Pricing Packages</span>
             </div>
             <h1 className="text-5xl md:text-6xl font-serif font-light text-slate-900 mb-6">
               Choose Your Perfect Package
             </h1>
-            <div className="w-24 h-1 bg-emerald-600 mx-auto mb-8 rounded-full"></div>
+            <div className="w-24 h-1 bg-gold mx-auto mb-8 rounded-full"></div>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
               Professional photography services tailored to your needs. All
               packages include our commitment to excellence and stunning
@@ -144,7 +144,7 @@ export default function PricingPage() {
             </p>
             <button
               onClick={generatePDF}
-              className="bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-3 rounded-2xl shadow-lg hover:shadow-xl transition-all inline-flex items-center gap-2"
+              className="bg-gold hover:bg-gold text-white px-6 py-3 rounded-2xl shadow-lg hover:shadow-xl transition-all inline-flex items-center gap-2"
             >
               <Download className="w-5 h-5" />
               Download Pricing Guide
@@ -158,18 +158,18 @@ export default function PricingPage() {
                   key={index}
                   className={`relative overflow-hidden rounded-3xl transition-all duration-300 hover:shadow-2xl hover:scale-105 border-2 ${
                     pkg.popular
-                      ? "border-emerald-600 shadow-xl scale-105 bg-white"
+                      ? "border-gold shadow-xl scale-105 bg-white"
                       : "border-gray-200 bg-white"
                   }`}
                 >
                   {pkg.popular && (
-                    <div className="absolute top-0 right-0 bg-emerald-600 text-white px-4 py-1 rounded-bl-2xl rounded-tr-2xl text-sm font-bold">
+                    <div className="absolute top-0 right-0 bg-gold text-white px-4 py-1 rounded-bl-2xl rounded-tr-2xl text-sm font-bold">
                       MOST POPULAR
                     </div>
                   )}
                   <div className="text-center pb-8 pt-10 px-6">
                     <div className="flex justify-center mb-4">
-                      <div className="bg-emerald-600 p-4 rounded-2xl shadow-lg">
+                      <div className="bg-gold p-4 rounded-2xl shadow-lg">
                         <Icon className="w-10 h-10 text-white" />
                       </div>
                     </div>
@@ -184,7 +184,7 @@ export default function PricingPage() {
                   <div className="space-y-4 px-6 py-6">
                     {pkg.features.map((feature, idx) => (
                       <div key={idx} className="flex items-start gap-3">
-                        <div className="bg-emerald-600 p-1 rounded-full mt-0.5 shrink-0">
+                        <div className="bg-gold p-1 rounded-full mt-0.5 shrink-0">
                           <Check className="w-4 h-4 text-white" />
                         </div>
                         <span className="text-gray-700">{feature}</span>
@@ -193,7 +193,7 @@ export default function PricingPage() {
                   </div>
                   <div className="pt-8 pb-8 px-6">
                     <button
-                      className={`w-full py-3 rounded-2xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all text-white bg-emerald-600 hover:bg-emerald-700`}
+                      className={`w-full py-3 rounded-2xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all text-white bg-gold hover:bg-gold`}
                       onClick={() =>
                         window.open(
                           `https://wa.me/${socialLinks.whatsapp.text}?text=I'm interested in the ` +
@@ -216,7 +216,7 @@ export default function PricingPage() {
             </h2>
             <div className="grid md:grid-cols-3 gap-8">
               <div className="text-center">
-                <div className="bg-emerald-600 p-4 rounded-2xl inline-block mb-4">
+                <div className="bg-gold p-4 rounded-2xl inline-block mb-4">
                   <Camera className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="font-bold text-slate-900 mb-2">
@@ -227,7 +227,7 @@ export default function PricingPage() {
                 </p>
               </div>
               <div className="text-center">
-                <div className="bg-emerald-600 p-4 rounded-2xl inline-block mb-4">
+                <div className="bg-gold p-4 rounded-2xl inline-block mb-4">
                   <Award className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="font-bold text-slate-900 mb-2">
@@ -238,7 +238,7 @@ export default function PricingPage() {
                 </p>
               </div>
               <div className="text-center">
-                <div className="bg-emerald-600 p-4 rounded-2xl inline-block mb-4">
+                <div className="bg-gold p-4 rounded-2xl inline-block mb-4">
                   <Sparkles className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="font-bold text-slate-900 mb-2">

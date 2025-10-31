@@ -12,18 +12,18 @@ export default function FAQPage() {
   };
 
   return (
-    <div className="min-h-screen bg-linear-to-br from-gray-50 to-emerald-50/30 pt-16">
+    <div className="min-h-screen bg-linear-to-br from-gray-50 to-gold/30 pt-16">
       <section className="py-24 px-4">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 bg-emerald-600 text-white px-6 py-2 rounded-full mb-6 shadow-lg">
+            <div className="inline-flex items-center gap-2 bg-gold text-white px-6 py-2 rounded-full mb-6 shadow-lg">
               <HelpCircle className="w-5 h-5" />
               <span className="font-semibold">Frequently Asked Questions</span>
             </div>
             <h1 className="text-5xl md:text-6xl font-serif font-light text-slate-900 mb-6">
               We're Here to Help
             </h1>
-            <div className="w-24 h-1 bg-emerald-600 mx-auto mb-8 rounded-full"></div>
+            <div className="w-24 h-1 bg-gold mx-auto mb-8 rounded-full"></div>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Find answers to common questions about our photography services.
               Can't find what you're looking for? Feel free to reach out!
@@ -39,7 +39,7 @@ export default function FAQPage() {
                   className="bg-white rounded-3xl p-8 shadow-xl border-2 border-gray-100"
                 >
                   <div className="flex items-center gap-4 mb-6">
-                    <div className="bg-emerald-600 p-3 rounded-2xl">
+                    <div className="bg-gold p-3 rounded-2xl">
                       <Icon className="w-6 h-6 text-white" />
                     </div>
                     <h2 className="text-2xl font-serif font-bold text-slate-900">
@@ -86,7 +86,7 @@ export default function FAQPage() {
           </div>
 
           <div className="mt-16 bg-slate-900 rounded-3xl p-12 text-center text-white shadow-xl">
-            <Sparkles className="w-16 h-16 mx-auto mb-6 text-emerald-400" />
+            <Sparkles className="w-16 h-16 mx-auto mb-6 text-gold/80" />
             <h2 className="text-3xl font-serif font-bold mb-4">
               Still Have Questions?
             </h2>

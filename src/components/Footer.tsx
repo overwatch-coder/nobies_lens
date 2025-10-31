@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Camera, MessageCircle, Mail, Phone, MapPin } from "lucide-react";
+import { MessageCircle, Mail, Phone, MapPin } from "lucide-react";
 
 import {
   FaInstagram as Instagram,
@@ -16,9 +16,13 @@ export default function Footer() {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12">
             {/* Brand Section */}
             <div className="md:col-span-1">
-              <div className="flex items-center space-x-2 mb-4">
-                <div className="bg-emerald-600 p-2 rounded-xl">
-                  <Camera className="w-6 h-6 text-white" />
+              <div className="flex items-center space-x-2 mb-4 md:-mt-5">
+                <div className="p-2 rounded-xl">
+                  {/* <Camera className="w-6 h-6 text-white" /> */}
+                  <img
+                    src="/logos/logo_official_gold.png"
+                    className="w-16 h-16 md:w-20 md:h-20 object-contain"
+                  />
                 </div>
                 <span className="text-xl font-serif font-bold">
                   Nobies Lens
@@ -32,7 +36,7 @@ export default function Footer() {
                   href={socialLinks.whatsapp.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-emerald-400 transition-colors"
+                  className="hover:text-gold/80 transition-colors"
                 >
                   <MessageCircle className="w-5 h-5" />
                 </a>
@@ -62,7 +66,7 @@ export default function Footer() {
                 <li>
                   <Link
                     to="/"
-                    className="text-gray-400 hover:text-white transition-colors"
+                    className="text-gray-400 hover:text-gold transition-colors"
                   >
                     Home
                   </Link>
@@ -70,7 +74,7 @@ export default function Footer() {
                 <li>
                   <Link
                     to="/pricing"
-                    className="text-gray-400 hover:text-white transition-colors"
+                    className="text-gray-400 hover:text-gold transition-colors"
                   >
                     Pricing
                   </Link>
@@ -78,7 +82,7 @@ export default function Footer() {
                 <li>
                   <Link
                     to="/faq"
-                    className="text-gray-400 hover:text-white transition-colors"
+                    className="text-gray-400 hover:text-gold transition-colors"
                   >
                     FAQ
                   </Link>
@@ -86,7 +90,7 @@ export default function Footer() {
                 <li>
                   <a
                     href="#contact"
-                    className="text-gray-400 hover:text-white transition-colors"
+                    className="text-gray-400 hover:text-gold transition-colors"
                   >
                     Contact
                   </a>
@@ -101,7 +105,7 @@ export default function Footer() {
                 <li>
                   <a
                     href="#services"
-                    className="text-gray-400 hover:text-white transition-colors"
+                    className="text-gray-400 hover:text-gold transition-colors"
                   >
                     Corporate Events
                   </a>
@@ -109,7 +113,7 @@ export default function Footer() {
                 <li>
                   <a
                     href="#services"
-                    className="text-gray-400 hover:text-white transition-colors"
+                    className="text-gray-400 hover:text-gold transition-colors"
                   >
                     Portraits
                   </a>
@@ -117,7 +121,7 @@ export default function Footer() {
                 <li>
                   <a
                     href="#services"
-                    className="text-gray-400 hover:text-white transition-colors"
+                    className="text-gray-400 hover:text-gold transition-colors"
                   >
                     Creative Shoots
                   </a>
@@ -125,7 +129,7 @@ export default function Footer() {
                 <li>
                   <a
                     href="#services"
-                    className="text-gray-400 hover:text-white transition-colors"
+                    className="text-gray-400 hover:text-gold transition-colors"
                   >
                     Graduation
                   </a>
@@ -133,7 +137,7 @@ export default function Footer() {
                 <li>
                   <a
                     href="#services"
-                    className="text-gray-400 hover:text-white transition-colors"
+                    className="text-gray-400 hover:text-gold transition-colors"
                   >
                     Lifestyle
                   </a>
@@ -146,25 +150,25 @@ export default function Footer() {
               <h3 className="text-lg font-semibold mb-6">Contact</h3>
               <ul className="space-y-4">
                 <li className="flex items-start space-x-3">
-                  <MapPin className="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" />
+                  <MapPin className="w-5 h-5 text-gold/80 shrink-0 mt-0.5" />
                   <span className="text-gray-400">
                     {socialLinks.address.full}
                   </span>
                 </li>
                 <li className="flex items-center space-x-3">
-                  <Phone className="w-5 h-5 text-emerald-400 shrink-0" />
+                  <Phone className="w-5 h-5 text-gold/80 shrink-0" />
                   <a
                     href={socialLinks.phone.link}
-                    className="text-gray-400 hover:text-white transition-colors"
+                    className="text-gray-400 hover:text-gold transition-colors"
                   >
                     {socialLinks.phone.text}
                   </a>
                 </li>
                 <li className="flex items-center space-x-3">
-                  <Mail className="w-5 h-5 text-emerald-400 shrink-0" />
+                  <Mail className="w-5 h-5 text-gold/80 shrink-0" />
                   <a
                     href={socialLinks.email.link}
-                    className="text-gray-400 hover:text-white transition-colors"
+                    className="text-gray-400 hover:text-gold transition-colors"
                   >
                     {socialLinks.email.text}
                   </a>
@@ -185,7 +189,7 @@ export default function Footer() {
                 <li>
                   <Link
                     to="/privacy"
-                    className="text-gray-400 hover:text-white transition-colors text-sm"
+                    className="text-gray-400 hover:text-gold transition-colors text-sm"
                   >
                     Privacy Policy
                   </Link>
@@ -193,7 +197,7 @@ export default function Footer() {
                 <li>
                   <Link
                     to="/terms"
-                    className="text-gray-400 hover:text-white transition-colors text-sm"
+                    className="text-gray-400 hover:text-gold transition-colors text-sm"
                   >
                     Terms of Service
                   </Link>
@@ -201,7 +205,7 @@ export default function Footer() {
                 <li>
                   <Link
                     to="/cookies"
-                    className="text-gray-400 hover:text-white transition-colors text-sm"
+                    className="text-gray-400 hover:text-gold transition-colors text-sm"
                   >
                     Cookie Policy
                   </Link>
@@ -217,9 +221,9 @@ export default function Footer() {
                 <input
                   type="email"
                   placeholder="Your email"
-                  className="flex-1 px-4 py-2 rounded-lg bg-slate-800 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-emerald-600"
+                  className="flex-1 px-4 py-2 rounded-lg bg-slate-800 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-gold"
                 />
-                <button className="px-4 py-2 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 transition-colors font-semibold">
+                <button className="px-4 py-2 bg-gold text-white rounded-lg hover:bg-gold transition-colors font-semibold">
                   Subscribe
                 </button>
               </div>

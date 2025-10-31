@@ -16,7 +16,7 @@ export default function ServiceDetailPage() {
           <h1 className="text-2xl font-bold mb-4">Service not found</h1>
           <button
             onClick={() => navigate("/")}
-            className="text-emerald-600 hover:text-emerald-700 font-semibold"
+            className="text-gold hover:text-gold font-semibold"
           >
             Back to Home
           </button>
@@ -51,7 +51,7 @@ export default function ServiceDetailPage() {
         </div>
         <div className="absolute inset-0 bg-linear-to-br from-slate-900/80 to-slate-900/60"></div>
         <div className="relative z-10 text-center px-4">
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">
+          <h1 className="text-4xl md:text-6xl font-bold text-gold mb-4">
             {service.title}
           </h1>
           <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto">
@@ -96,12 +96,12 @@ export default function ServiceDetailPage() {
                 key={key}
                 className={`rounded-3xl p-6 md:p-8 border-2 transition-all duration-300 hover:shadow-2xl hover:scale-105 ${
                   key === "professional"
-                    ? "bg-linear-to-br from-emerald-50 to-teal-50 border-emerald-300 shadow-lg"
+                    ? "bg-linear-to-br from-gold/10 to-teal-50 border-gold/30 shadow-lg"
                     : "bg-white border-gray-200"
                 }`}
               >
                 {key === "professional" && (
-                  <div className="inline-block bg-linear-to-r from-emerald-600 to-teal-600 text-white px-4 py-1 rounded-full text-sm font-bold mb-4">
+                  <div className="inline-block bg-linear-to-r from-gold to-gold/70 text-white px-4 py-1 rounded-full text-sm font-bold mb-4">
                     Most Popular
                   </div>
                 )}
@@ -128,7 +128,7 @@ export default function ServiceDetailPage() {
                   }
                   className={`w-full py-3 rounded-2xl font-semibold transition-all duration-300 ${
                     key === "professional"
-                      ? "bg-linear-to-r from-emerald-600 to-teal-600 text-white hover:from-emerald-700 hover:to-teal-700"
+                      ? "bg-linear-to-r from-gold to-gold/50 text-white hover:from-gold hover:to-gold/70"
                       : "bg-gray-100 text-slate-900 hover:bg-gray-200"
                   }`}
                 >
@@ -150,9 +150,9 @@ export default function ServiceDetailPage() {
             {service.benefits.map((benefit, index) => (
               <div
                 key={index}
-                className="flex items-center gap-4 p-4 md:p-6 bg-white rounded-2xl border-2 border-gray-100 hover:border-emerald-300 transition-colors"
+                className="flex items-center gap-4 p-4 md:p-6 bg-white rounded-2xl border-2 border-gray-100 hover:border-gold/40 transition-colors"
               >
-                <div className="bg-linear-to-br from-emerald-600 to-teal-600 p-2 rounded-lg shrink-0 mt-1">
+                <div className="bg-linear-to-br from-gold to-gold/60 p-2 rounded-lg shrink-0 mt-1">
                   <Check className="w-5 h-5 text-white" />
                 </div>
                 <p className="text-gray-700 font-semibold text-sm md:text-base">
@@ -167,7 +167,7 @@ export default function ServiceDetailPage() {
       {/* CTA Section */}
       <section className="py-16 md:py-24 px-4 bg-white -mt-8">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 bg-linear-to-r from-emerald-600 to-teal-600 text-white px-6 py-2 rounded-full mb-6">
+          <div className="inline-flex items-center gap-2 bg-linear-to-r from-gold to-gold/60 text-white px-6 py-2 rounded-full mb-6">
             <Sparkles className="w-5 h-5" />
             <span className="font-semibold">Ready to Book?</span>
           </div>
@@ -180,7 +180,7 @@ export default function ServiceDetailPage() {
           </p>
           <button
             onClick={() => window.open(socialLinks.whatsapp.link, "_blank")}
-            className="bg-linear-to-r from-emerald-600 to-teal-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:from-emerald-700 hover:to-teal-700 transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105 inline-flex items-center gap-2"
+            className="bg-linear-to-r from-gold to-gold/60 text-white px-8 py-4 rounded-full font-semibold text-lg hover:from-gold hover:to-gold/70 transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105 inline-flex items-center gap-2"
           >
             <MessageCircle className="w-5 h-5" />
             Chat on WhatsApp

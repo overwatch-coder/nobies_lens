@@ -75,7 +75,6 @@ export interface SocialLinks {
 export type ServiceType =
   | "corporate"
   | "portraits"
-  | "creative"
   | "graduation"
   | "lifestyle";
 

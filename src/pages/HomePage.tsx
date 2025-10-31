@@ -24,6 +24,7 @@ import {
   testimonials,
   allPhotos,
   socialLinks,
+  heroImages,
 } from "@/lib/constants";
 import type { PhotoCategory } from "@/types";
 import { Button } from "@/components/ui/button";
@@ -80,7 +81,7 @@ export default function HomePage() {
           <div className="text-center mb-16">
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-light mb-6 text-balance">
               Capturing Life's
-              <span className="block text-emerald-600 font-normal">
+              <span className="block text-gold font-normal">
                 Beautiful Moments
               </span>
             </h1>
@@ -94,21 +95,21 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-16">
             <div className="md:col-span-2">
               <img
-                src="/professional-photography-portfolio-hero-image.jpg"
-                alt="Featured Photography Work"
-                className="w-full h-[400px] md:h-[500px] object-cover rounded-lg"
+                src={heroImages[0]}
+                alt="Hero image 1"
+                className="w-full h-[400px] md:h-[512px] object-cover rounded-lg"
               />
             </div>
             <div className="space-y-4">
               <img
-                src="/portrait-photography-sample.jpg"
-                alt="Portrait Sample"
-                className="w-full h-60 object-cover rounded-lg"
+                src={heroImages[1]}
+                alt="Hero image 2"
+                className="w-full h-64 object-cover rounded-lg"
               />
               <img
-                src="/wedding-photography-sample.jpg"
-                alt="Wedding Sample"
-                className="w-full h-60 object-cover rounded-lg"
+                src={heroImages[2]}
+                alt="Hero image 3"
+                className="w-full h-64 object-cover rounded-lg"
               />
             </div>
           </div>
@@ -118,7 +119,7 @@ export default function HomePage() {
       {/* About Section */}
       <section
         id="about"
-        className="py-16 px-4 sm:px-6 lg:px-8 bg-linear-to-br from-emerald-50 to-teal-50/30"
+        className="py-16 px-4 sm:px-6 lg:px-8 bg-linear-to-br from-gold/20 to-teal-50/30"
       >
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -155,19 +156,17 @@ export default function HomePage() {
 
               <div className="mt-8 grid grid-cols-3 gap-8">
                 <div className="text-center">
-                  <div className="text-2xl font-semibold text-emerald-600 mb-1">
+                  <div className="text-2xl font-semibold text-gold mb-1">
                     500+
                   </div>
                   <div className="text-sm text-gray-600">Happy Clients</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-2xl font-semibold text-emerald-600 mb-1">
-                    5
-                  </div>
+                  <div className="text-2xl font-semibold text-gold mb-1">5</div>
                   <div className="text-sm text-gray-600">Years Experience</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-2xl font-semibold text-emerald-600 mb-1">
+                  <div className="text-2xl font-semibold text-gold mb-1">
                     10k+
                   </div>
                   <div className="text-sm text-gray-600">Photos Captured</div>
@@ -177,7 +176,7 @@ export default function HomePage() {
 
             <div className="relative">
               <img
-                src="/professional-photographer-at-work.jpg"
+                src={heroImages[3]}
                 alt="About Us"
                 className="w-full h-[600px] object-cover rounded-lg"
               />
@@ -194,20 +193,20 @@ export default function HomePage() {
             <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
               Our Services
             </h2>
-            <div className="w-24 h-1 bg-emerald-600 mx-auto mb-8 rounded-full"></div>
+            <div className="w-24 h-1 bg-gold mx-auto mb-8 rounded-full"></div>
             <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
               Comprehensive photography services tailored to capture your unique
               moments
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-6 md:gap-8 max-w-5xl mx-auto">
             {services.map((service, index) => {
               const Icon = service.icon;
               return (
                 <div
                   key={index}
-                  className="group bg-white p-6 md:p-8 rounded-3xl hover:shadow-2xl transition-all duration-500 hover:scale-[1.01] border-2 border-gray-100 text-left hover:border-emerald-600"
+                  className="group bg-white p-6 md:p-8 rounded-3xl hover:shadow-2xl transition-all duration-500 hover:scale-[1.01] border-2 border-gray-100 text-left hover:border-gold"
                 >
                   <div
                     className={`bg-linear-to-br ${service.color} p-4 rounded-2xl inline-block mb-6 shadow-lg`}
@@ -222,7 +221,7 @@ export default function HomePage() {
                   </p>
 
                   <Link to={`/service/${service.id}`}>
-                    <Button className="mt-4 md:w-fit w-full bg-emerald-600 hover:bg-emerald-700 text-white">
+                    <Button className="mt-4 md:w-fit w-full bg-gold hover:bg-gold text-white">
                       <span>Info Info</span>
                       <ArrowRight className="w-4 h-4" />
                     </Button>
@@ -237,14 +236,14 @@ export default function HomePage() {
       {/* Portfolio Section */}
       <section
         id="portfolio"
-        className="py-16 md:py-24 px-4 bg-linear-to-br from-gray-50 to-emerald-50/20"
+        className="py-16 md:py-24 px-4 bg-linear-to-br from-gray-50 to-gold/20"
       >
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12 md:mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
               Our Portfolio
             </h2>
-            <div className="w-24 h-1 bg-emerald-600 mx-auto mb-8 rounded-full"></div>
+            <div className="w-24 h-1 bg-gold mx-auto mb-8 rounded-full"></div>
             <p className="text-lg md:text-xl text-gray-600">
               A glimpse of our finest work
             </p>
@@ -285,6 +284,7 @@ export default function HomePage() {
                       src={photo.url || "/placeholder.svg"}
                       alt={`Portfolio ${index + 1}`}
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      loading="lazy"
                     />
                     <div className="absolute inset-0 flex items-center justify-center transition-all duration-300 bg-linear-to-br from-blue-600/0 to-pink-600/0 group-hover:from-blue-600/40 group-hover:to-pink-600/40">
                       <Camera className="w-8 md:w-10 h-8 md:h-10 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -322,7 +322,7 @@ export default function HomePage() {
             <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
               Client Testimonials
             </h2>
-            <div className="w-24 h-1 mx-auto mb-8 rounded-full bg-emerald-600"></div>
+            <div className="w-24 h-1 mx-auto mb-8 rounded-full bg-gold"></div>
             <p className="text-xl text-gray-600">
               What our clients say about us
             </p>
@@ -358,14 +358,14 @@ export default function HomePage() {
       {/* Contact Section */}
       <section
         id="contact"
-        className="py-16 md:py-24 px-4 bg-linear-to-br from-emerald-50 to-teal-50/30"
+        className="py-16 md:py-24 px-4 bg-linear-to-br from-gold/20 to-teal-50/30"
       >
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12 md:mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
               Get In Touch
             </h2>
-            <div className="w-24 h-1 bg-emerald-600 mx-auto mb-8 rounded-full"></div>
+            <div className="w-24 h-1 bg-gold mx-auto mb-8 rounded-full"></div>
             <p className="text-lg md:text-xl text-gray-600">
               Let's capture your special moments together
             </p>
@@ -373,8 +373,8 @@ export default function HomePage() {
 
           <div className="grid md:grid-cols-2 gap-8 md:gap-12">
             <div className="space-y-6 md:space-y-8">
-              <div className="flex items-start space-x-4 p-4 md:p-6 bg-white rounded-3xl border-2 border-emerald-200 shadow-md">
-                <div className="bg-emerald-600 p-3 rounded-2xl shrink-0">
+              <div className="flex items-start space-x-4 p-4 md:p-6 bg-white rounded-3xl border-2 border-gold/30 shadow-md">
+                <div className="bg-gold p-3 rounded-2xl shrink-0">
                   <MapPin className="w-6 h-6 text-white" />
                 </div>
                 <div>
@@ -392,8 +392,8 @@ export default function HomePage() {
                 </div>
               </div>
 
-              <div className="flex items-start space-x-4 p-4 md:p-6 bg-white rounded-3xl border-2 border-emerald-200 shadow-md">
-                <div className="bg-emerald-600 p-3 rounded-2xl shrink-0">
+              <div className="flex items-start space-x-4 p-4 md:p-6 bg-white rounded-3xl border-2 border-gold/30 shadow-md">
+                <div className="bg-gold p-3 rounded-2xl shrink-0">
                   <Phone className="w-6 h-6 text-white" />
                 </div>
                 <div>
@@ -406,8 +406,8 @@ export default function HomePage() {
                 </div>
               </div>
 
-              <div className="flex items-start space-x-4 p-4 md:p-6 bg-white rounded-3xl border-2 border-emerald-200 shadow-md">
-                <div className="bg-emerald-600 p-3 rounded-2xl shrink-0">
+              <div className="flex items-start space-x-4 p-4 md:p-6 bg-white rounded-3xl border-2 border-gold/30 shadow-md">
+                <div className="bg-gold p-3 rounded-2xl shrink-0">
                   <Mail className="w-6 h-6 text-white" />
                 </div>
                 <div>
