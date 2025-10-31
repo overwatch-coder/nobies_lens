@@ -64,10 +64,10 @@ export default function ServiceDetailPage() {
       <section className="py-16 md:py-24 px-4 bg-linear-to-br from-gray-50 to-blue-50/30">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-12 text-center">
-            Our Work
+            Featured Work
           </h2>
           <div className="grid md:grid-cols-3 gap-6 md:gap-8">
-            {service.images.map((image, index) => (
+            {service.images.slice(0, 3).map((image, index) => (
               <div
                 key={index}
                 className="group relative overflow-hidden rounded-3xl aspect-square shadow-lg hover:shadow-2xl transition-all duration-300"
