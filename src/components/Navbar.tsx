@@ -77,6 +77,7 @@ const Navbar = () => {
               <img
                 src="/logos/logo_official_gold.png"
                 className="w-10 h-10 md:w-16 md:h-16 object-contain rounded-full"
+                loading="lazy"
               />
               {/* <Camera className="w-6 h-6 text-white" /> */}
             </div>
@@ -126,6 +127,7 @@ const Navbar = () => {
                       <img
                         src="/logos/logo_official_gold.png"
                         className="w-16 h-16 object-contain"
+                        loading="lazy"
                       />
                       {/* <Camera className="w-6 h-6 text-white" /> */}
                     </div>

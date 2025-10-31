@@ -98,6 +98,7 @@ export default function HomePage() {
                 src={heroImages[0]}
                 alt="Hero image 1"
                 className="w-full h-[400px] md:h-[512px] object-cover rounded-lg"
+                loading="lazy"
               />
             </div>
             <div className="space-y-4">
@@ -105,11 +106,13 @@ export default function HomePage() {
                 src={heroImages[1]}
                 alt="Hero image 2"
                 className="w-full h-64 object-cover rounded-lg"
+                loading="lazy"
               />
               <img
                 src={heroImages[2]}
                 alt="Hero image 3"
                 className="w-full h-64 object-cover rounded-lg"
+                loading="lazy"
               />
             </div>
           </div>
@@ -179,6 +182,7 @@ export default function HomePage() {
                 src={heroImages[3]}
                 alt="About Us"
                 className="w-full h-[600px] object-cover rounded-lg"
+                loading="lazy"
               />
               <div className="absolute inset-0 bg-linear-to-t from-black/20 to-transparent rounded-lg"></div>
             </div>
@@ -488,6 +492,7 @@ export default function HomePage() {
             alt={`Portfolio ${selectedPhotoIndex + 1}`}
             className="max-w-full max-h-full object-contain rounded-2xl"
             onClick={(e) => e.stopPropagation()}
+            loading="lazy"
           />
 
           {selectedPhotoIndex < displayPhotos.length - 1 && (

@@ -22,6 +22,7 @@ export default function Footer() {
                   <img
                     src="/logos/logo_official_gold.png"
                     className="w-16 h-16 md:w-20 md:h-20 object-contain"
+                    loading="lazy"
                   />
                 </div>
                 <span className="text-xl font-serif font-bold">

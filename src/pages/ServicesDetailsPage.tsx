@@ -47,6 +47,7 @@ export default function ServiceDetailPage() {
             src={service.images[0] || "/placeholder.svg"}
             alt="Service Hero"
             className="w-full h-full object-cover"
+            loading="lazy"
           />
         </div>
         <div className="absolute inset-0 bg-linear-to-br from-slate-900/80 to-slate-900/60"></div>
@@ -76,6 +77,7 @@ export default function ServiceDetailPage() {
                   src={image || "/placeholder.svg"}
                   alt={`${service.title} ${index + 1}`}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                  loading="lazy"
                 />
                 <div className="absolute inset-0 bg-linear-to-br from-blue-600/0 to-pink-600/0 group-hover:from-blue-600/40 group-hover:to-pink-600/40 transition-all duration-300"></div>
               </div>
